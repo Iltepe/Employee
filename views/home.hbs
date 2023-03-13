@@ -1,0 +1,92 @@
+
+{{#if removedUser}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  User has been removed.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<section>
+
+  <div class="row">
+    <div class="col-6"><h1>Employees</h1></div>
+      <div class="col-6 d-flex justify-content-end">
+        <a href="/adduser" type="button" class="btn btn-danger align-self-center">+ add new employee</a>
+    </div>
+  </div>
+
+
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Monthly Salary</th>
+        <th scope="col" class="text-end">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    {{#each rows}}
+      <tr>
+        <th scope="row">{{this.id}}</th>
+        <td>{{this.full_name}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.phone}}</td>
+        <td>{{this.dof}}</td>
+        <td>${{this.salary}}</td>
+
+        <td class="text-end">
+          <a href="/viewuser/{{this.id}}" type="button" class="btn btn-light btn-small"> <i class="bi bi-eye"></i> View</a>
+          <a href="/edituser/{{this.id}}" type="button" class="btn btn-light btn-small"> <i class="bi bi-pencil"></i> Edit</a>
+          <a href="/{{this.id}}" type="button" class="btn btn-light btn-small"> <i class="bi bi-person-x"></i> Delete</a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+</section>
+
+<section>
+  <div class="row">
+    <div class="col-6"><h1>Task</h1></div>
+      <div class="col-6 d-flex justify-content-end">
+        <a href="#" type="button" class="btn btn-danger align-self-center">+ add new task</a>
+    </div>
+  </div>
+
+
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Assigned to</th>
+        <th scope="col">Due Date</th>
+        <th scope="col">Description</th>
+        <th scope="col" class="text-end">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    {{#each rows}}
+      <tr>
+        <th scope="row">{{this.id}}</th>
+        <td>{{this.title}}</td>
+        <td>{{this.assigned_to}}</td>
+        <td>{{this.dueDate}}</td>
+        <td>{{this.description}}</td>
+
+        <td class="text-end">
+          <a href="#" type="button" class="btn btn-light btn-small"> <i class="bi bi-eye"></i> View</a>
+          <a href="#" type="button" class="btn btn-light btn-small"> <i class="bi bi-pencil"></i> Edit</a>
+          <a href="#" type="button" class="btn btn-light btn-small"> <i class="bi bi-person-x"></i> Delete</a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+</section>

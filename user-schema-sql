@@ -1,0 +1,19 @@
+CREATE TABLE `usermenagement`.`user` (
+`id` INT NOT NULL AUTO_INCREMENT ,
+`full_name` VARCHAR(45) NOT NULL ,
+`email` VARCHAR(45) NOT NULL ,
+`phone` VARCHAR(45) NOT NULL ,
+`dof` VARCHAR(45) NOT NULL ,
+`salary` VARCHAR(45) NOT NULL ,
+`comments` TEXT NOT NULL ,
+`status` VARCHAR(10) NOT NULL DEFAULT 'active' ,
+ PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+CREATE TABLE `usermenagement`.`task` (
+`id` INT NOT NULL AUTO_INCREMENT ,
+`title` VARCHAR(45) NOT NULL ,
+`assigned_to` VARCHAR(45) NOT NULL ,
+`dueDate` VARCHAR(11) NOT NULL ,
+`description` TEXT NOT NULL ,
+`status` VARCHAR(10) NOT NULL DEFAULT 'active' ,
+PRIMARY KEY (`id`)) ENGINE = InnoDB;
